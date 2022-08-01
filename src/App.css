@@ -1,38 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap');
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *::after, *::before {
+  box-sizing: inherit;
+}
+
+body {
+  font-size: 1.6rem;
+  background-color: black;
+}
+
 .App {
   text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  font-family: 'Raleway', sans-serif;
+  transition: background-color 2s;
+}
+
+#quote-box {
+  background-color: white;
+  border-radius: 5px;
+  padding: 2rem;
+  width: 75%;
+}
+
+@media (min-width: 768px) {
+  #quote-box {
+    width: 550px;
+    padding: 4rem 5rem;
+  }
+}
+
+#text {
+  transition: color 2s;
+  font-size: 2.8rem;
+}
+
+#author {
+  font-size: 1.6rem;
+  text-align: right;
+  padding: 2rem 0;
+  transition: color 2s;
+}
+@media (min-width: 768px) {
+  #author {
+    padding: 3rem 0;
+  }
+}
+
+.container-buttons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 2rem;
+}
+
+#tweet-quote {
   color: white;
+  background-color: black;
+  padding: 1rem;
+  text-align: center;
+  width: 4rem;
+  height: 4rem;
+  transition: background-color 2s;
 }
 
-.App-link {
-  color: #61dafb;
+#new-quote {
+  color: white;
+  background-color: black;
+  padding: 1rem 2rem;
+  border-radius: .5rem;
+  border: none;
+  transition: background-color 2s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#new-quote:hover {
+  cursor: pointer;
+}
+
+p {
+  color: white;
+  font-size: 1.2rem;
+}
+.repo {
+  text-decoration: none;
+  color: white;
 }

@@ -1,23 +1,21 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import QuoteBox from './components/QuoteBox';
+import colors from "./colors.json";
+
 
 function App() {
+
+  const [color, setColor] = useState(colors[0]);
+
+  const changeColor = (arg) => {
+    setColor(colors[Math.floor(Math.random() * colors.length)]);
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App" style={{ backgroundColor: color }}>
+      <QuoteBox changeColor={changeColor} color={color} />
+      <p>by <a href='https://github.com/Alvaro-IHC' className='repo'>Alvaro-IHC</a></p>
     </div>
   );
 }
